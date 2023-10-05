@@ -1,0 +1,56 @@
+{% extends "base.html" %}{% block title %}Faculty Login Page{% endblock %} {% block content%}
+
+  <body>
+    <div class="faculty-login-page">
+
+    {# DISPLAY NOTIFICATION ERROR  #} 
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages%}
+        {% if category == 'error' %}
+        <div class="alert alert-danger alter-dismissable fade show" role="alert" style="z-index:1;">
+        {{ message }}
+        <button type="button" class="close" data-dismiss="alert">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+      <div class="rectangle-1"></div>
+        <div class="rectangle-3"></div>
+          <img class="rectangle-5" src="{{ url_for('static', filename='images/Faculty-Login-Page/rectangle-5.png')}}" />
+          <img class="image-1" src="{{ url_for('static', filename='images/Faculty-Login-Page/image-1.png')}}"/>
+          <img class="image-2" src="{{ url_for('static', filename='images/Faculty-Login-Page/image-2.png')}}"/>
+            <div class="telephone-632-8952-7818-632-8287-8204">
+              Telephone (632) 8952-7818 (632) 8287-8204
+          </div>
+          <div class="quezoncity-pup-edu-ph-postal-mail">
+              quezoncity@pup.edu.ph Postal Mail
+          </div>
+          <div
+            class="pup-quezon-city-branch-don-fabian-st-commonwealth-quezon-city-philippines"
+          >
+              PUP Quezon City Branch Don Fabian St., Commonwealth Quezon City
+              Philippines
+          </div>
+      <div class="faculty-login">FACULTY LOGIN</div>
+        <div class="username">Username:</div>
+        <div class="sign-in-to-start-your-session">
+          Sign In to start your session:
+        </div>
+            <a href="/faculty-forgot-pass" class="i-forgot-my-password">I forgot my password</a>
+        <div class="password">Password:</div>
+          <form method="POST">
+              <input type="email" id="email" name="email" placeholder="Enter your Email" class="rectangle-6" required></input>
+              <input type="password" id="password" name="password" placeholder="Enter your Password"  class="rectangle-7" required></input>
+              <button class="rectangle-8" type="submit">Sign In</button>
+          </form>
+    </div>
+  </body>
+
+  {% endblock %}
