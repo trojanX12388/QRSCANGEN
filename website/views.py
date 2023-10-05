@@ -14,11 +14,5 @@ def home():
     
     # IF NO ACTIVE SESSION, REDIRECT TO MAIN PAGE
     else:
-        return render_template("base.html")
+        return render_template("Faculty-Login-Page/index.html")
 
-
-# ADMIN PAGE
-
-@views.route("/admin-login", methods=['GET', 'POST'])
-def adminL():
-    return render_template("Admin-Login-Page/index.html")

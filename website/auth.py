@@ -31,16 +31,6 @@ PASSWORD = os.getenv("PASSWORD")
 
 # -------------------------------------------------------------
 
-gauth = GoogleAuth()
-drive = GoogleDrive(gauth)
-
-folder = '1mT1alkWJ-akPnPyB9T7vtumNutwqRK0S'
-
-file1 = drive.CreateFile({'parents' : [{'id' : folder}], 'title' : 'hello2.txt'})
-file1.SetContentString('Hello world!, this is my second file')
-file1.Upload()
-
-
 
 
 # -------------------------------------------------------------
